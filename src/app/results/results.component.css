@@ -1,0 +1,17 @@
+.wrapper{
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+}
+.card{
+  margin: 5px;
+  background-color: rgb(214, 190, 200);
+}
+
+.card:nth-child( odd ){
+  background-color: rgb(76, 221, 221);
+}
+.card:hover{
+  transform: translateY(-4px);
+  transition: 100ms;
+  background-color: rgb(168, 64, 64);
+}

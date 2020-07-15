@@ -1,0 +1,18 @@
+<div class="wrapper">
+
+  <div class="left"></div>
+
+  <div class="center">
+    <div class="card" *ngFor="let item of messages; let i = index">
+      <div class="card-body">
+        CONVERGE: {{item.converge}}<br />
+        Load: {{item.load}}<br />
+        CLPU: {{item.clpu}}<br />
+        INRUSH: {{item.inrush}}
+      </div>
+    </div>
+  </div>
+
+  <div class="right"></div>
+
+</div>

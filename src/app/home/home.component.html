@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+  enabled. Please enable
+  Javascript and reload this page!</h2></noscript>
+  <div class="image">
+          <form class="text-center border border-light p-5"  #form (ngSubmit)="submit(bus, generator, load, form)">
+            <div class="row">
+            <div class="form-group name1 col-md-6">
+              <label for="bus">bus</label>
+              <input mdbInput type="text" class="form-control" id="bus" name="bus" #bus="ngModel" ngModel  placeholder="Bus">
+
+            </div>
+            <div class="form-group name1 col-md-6">
+               <label for="load">load</label>
+                <input mdbInput type="text" class="form-control" id="load" name="load" #load="ngModel" ngModel  placeholder="load">
+            </div>
+            </div>
+
+            <div class="md-form form-group mt-5">
+              <label for="generator">generators</label>
+
+                <input mdbInput type="text" class="form-control" id="generator" name="generator" #generator="ngModel" ngModel  placeholder="generators">
+            </div>
+                <button class="btn btn-success" type="submit" >Build Circuit</button>
+                
+          </form>
+        </div>
