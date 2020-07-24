@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component'
 import { MyWebSocketService } from './service/my-web-socket.service';
 import { ResultsComponent } from './results/results.component';
+import { ApiService } from './service/api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { ResultsComponent } from './results/results.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    MyWebSocketService
+    MyWebSocketService,
+    ApiService
   ],
   bootstrap: [AppComponent]
 })

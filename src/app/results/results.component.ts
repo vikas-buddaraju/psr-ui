@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyWebSocketService } from '../service/my-web-socket.service';
 import { CustomMessageResponse } from '../model/CustomMessage';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-results',
@@ -11,10 +12,10 @@ export class ResultsComponent implements OnInit {
 
   messages: CustomMessageResponse[] = [];
 
-  constructor(private webSocketService: MyWebSocketService) { }
+  constructor(private webSocketService: MyWebSocketService, private rest: ApiService) { }
 
   ngOnInit() {
-    this.messages = this.webSocketService.messages;
+    this.messages = this.rest.messages;
   }
 
 }
