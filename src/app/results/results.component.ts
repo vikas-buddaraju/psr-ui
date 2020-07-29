@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MyWebSocketService } from '../service/my-web-socket.service';
 import { CustomMessageResponse } from '../model/CustomMessage';
 import { ApiService } from '../service/api.service';
 
@@ -10,12 +9,22 @@ import { ApiService } from '../service/api.service';
 })
 export class ResultsComponent implements OnInit {
 
-  messages: CustomMessageResponse[] = [];
+  messages: CustomMessageResponse[] = this.rest.messages;
+  selectedArray: CustomMessageResponse[] = [];
 
-  constructor(private webSocketService: MyWebSocketService, private rest: ApiService) { }
+  constructor( private rest: ApiService) { }
 
   ngOnInit() {
-    this.messages = this.rest.messages;
+    this.getArrayValues(0);
+  }
+
+  getArrayValues(index) {
+    setInterval(() => {
+      if (index == this.messages.length)
+        return;
+      this.selectedArray.push(this.messages[index]);
+      index++;
+    }, 1000);
   }
 
 }

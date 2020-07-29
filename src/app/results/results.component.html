@@ -3,12 +3,12 @@
   <div class="left"></div>
 
   <div class="center">
-    <div class="card" *ngFor="let item of messages; let i = index">
+    <div class="card" *ngFor="let i of selectedArray; let i = index">
       <div class="card-body">
-        CONVERGE: {{item.converge}}<br />
-        Load: {{item.load}}<br />
-        CLPU: {{item.clpu}}<br />
-        INRUSH: {{item.inrush}}
+        CONVERGE: {{selectedArray.converge}}<br />
+        Load: {{selectedArray.load}}<br />
+        CLPU: {{selectedArray.clpu}}<br />
+        INRUSH: {{selectedArray.inrush}}
       </div>
     </div>
   </div>

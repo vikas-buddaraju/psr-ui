@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { CustomMessage, CustomMessageResponse } from '../model/CustomMessage';
-import { MyWebSocketService } from '../service/my-web-socket.service';
 import { Router } from '@angular/router';
 import { ApiService } from '../service/api.service';
 import { Subscribable, Observable, Subscription } from 'rxjs';
@@ -18,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   name: string;
   sub: Subscription;
 
-  constructor(private webSocketAPI: MyWebSocketService, private router: Router, private rest: ApiService) {}
+  constructor( private router: Router, private rest: ApiService) {}
 
   ngOnInit() {
   
@@ -37,20 +36,9 @@ export class HomeComponent implements OnInit, OnDestroy {
      }) 
   }
 
-  disconnect() {
-    this.webSocketAPI._disconnect();
-  }
-
   ngOnDestroy(){
     this.sub.unsubscribe();
     this.sub = null;
   }
   
-  sendMessage(message: CustomMessage) {
-    this.webSocketAPI._send(message);
-  }
-
-  handleMessage(message) {
-    this.greeting = message;
-  }
 }

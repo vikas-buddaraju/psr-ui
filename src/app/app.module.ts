@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component'
-import { MyWebSocketService } from './service/my-web-socket.service';
 import { ResultsComponent } from './results/results.component';
 import { ApiService } from './service/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -19,11 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFontAwesomeModule,
     FormsModule,
     HttpClientModule
   ],
   providers: [
-    MyWebSocketService,
     ApiService
   ],
   bootstrap: [AppComponent]
